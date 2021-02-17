@@ -44,3 +44,24 @@ class jinshi(Model):
 
     class Meta:
         database = db
+
+class tradingItem(scrapy.Item):
+    title = scrapy.Field()
+    desc = scrapy.Field()
+    time = scrapy.Field()
+    author = scrapy.Field()
+    img = scrapy.Field()
+    status = scrapy.Field()
+
+class tradingnews(Model):
+    # one 是主键
+    #code = CharField(verbose_name="code", max_length=100, primary_key=True, null=False)
+    title = CharField(verbose_name="title")
+    desc = CharField(verbose_name="desc")
+    time = CharField(verbose_name="time", max_length=30, null=False)
+    author = CharField(verbose_name="author",max_length=30, null=False)
+    img = CharField(verbose_name="img")
+    status = CharField(verbose_name="status",max_length=10, null=False)
+
+    class Meta:
+        database = db
